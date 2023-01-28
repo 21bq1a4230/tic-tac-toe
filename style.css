@@ -1,0 +1,16 @@
+body{
+    width: 100%;
+    height: 100%;
+    margin: auto 0;
+}
+.board{
+    display: grid;
+    grid-template-columns: 150px 150px 150px;
+    grid-template-rows: 150px 150px 150px;
+    grid-gap: 0;
+    margin: 50px 150px 0 150px;
+}
+.comp{
+    border: 1px solid black;
+    text-align: center;
+}
