@@ -27,7 +27,7 @@ function makeMove(e){
     tar = e.target;
     var barr = Array.from(b);
     var ind = barr.indexOf(tar);
-    if(game != over){
+    if(tar.innerHTML!==one && tar.innerHTML!==two&&game != over){
         if(turn%2===0){
             tar.innerHTML = one;
             turn++;
@@ -126,7 +126,15 @@ function gameOver(event,turn){
     game = over;
     var win = document.getElementById("win");
     console.log(win);
-    win.innerHTML = "<h1> player "+turn+" WON !!!<br> CONGRATULATIONS</h1>"
+    win.innerHTML = "<h1> player "+turn+" WON !!!<br> CONGRATULATIONS</h1>";
+    const resetbutton = document.createElement("button");
+    const reset = document.createElement("a");
+    const reset_text = document.createTextNode("Reset");
+    resetbutton.appendChild(reset_text);
+    reset.appendChild(resetbutton);
+    win.appendChild(reset);
+    resetbutton.classList.add("reset");
+    reset.setAttribute("href","index.html");
 }
 function gameTied(event){
     console.log("game not tied");
